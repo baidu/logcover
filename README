@@ -1,0 +1,11 @@
+USAGE:
+Single Machine Mode:
+sh logcover.sh $svn $log_cover_log_dir aa@yy [ xx@yy ] -s $mail_subject
+
+NEEDED:
+1: perl v5.8.5+ 
+2: python v2.7+
+3: svn client v1.6.5+
+
+
+
