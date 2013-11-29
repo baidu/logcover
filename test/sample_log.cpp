@@ -1,4 +1,4 @@
-OLAP_LOG_WARNING("fail to find, index is not loaded. [table='%s' index='%s']", \
+XXX_LOG_WARNING("fail to find, index is not loaded. [table='%s' index='%s']", \
         m_table->table_name().c_str(), \
         m_table->index_name().c_str()); \
     return 0;
@@ -8,15 +8,15 @@ BS_LOG_WARNING(TASK_FILE_LOG_FMT("error read from file, error [%m], "
         "file->offset [%llu], file->length [%llu]",
         TASK_FILE_LOG_ARGS(file, need_read_len, read_len, _read_buf_len,
             file->offset, file->length));
-BMQ_WRITE_LOG(UL_LOG_WARNING, "fail to open file "
+XXX_WRITE_LOG(UL_LOG_WARNING, "fail to open file "
         "[filename:%s] [tname:%s] [begin_pos:%lu]",
         file_name, tname, begin_pos);
-BMQ_WRITE_LOG(UL_LOG_WARNING,
+XXX_WRITE_LOG(UL_LOG_WARNING,
         "open config file failed [path:%s] [file:%s] [ret:%d]",
         db_path,
         this->_db_info_file,
         ret);
-BMQ_WRITE_LOG(UL_LOG_WARNING, "fail to open file "
+XXX_WRITE_LOG(UL_LOG_WARNING, "fail to open file "
         "[filename:%s]", file_name.c_str());
 ML_LOG_WARNING(
         "write data_path_in_use state [%s] to %s error!",
@@ -26,18 +26,18 @@ ML_LOG_WARNING(
         OLAP_LOG_FATAL("RowCurosr is not inited.");\
         return OLAP_ERR_NOT_INITED;\
     }
-OLAP_LOG_WARNING("fail to find, index is not loaded. [table='%s' index='%s']", \
+XXX_LOG_WARNING("fail to find, index is not loaded. [table='%s' index='%s']", \
         m_table->table_name().c_str(), \
         m_table->index_name().c_str()); \
 
 //olap bug
-#define OLAP_LOG_FATAL_SOCK(fmt, arg...) \
+#define xxx_LOG_FATAL_SOCK(fmt, arg...) \
     OLAP_LOG_WRITE(UL_LOG_FATAL, "[logid:%s][reqip:%s]"fmt, \
             ub_log_getbasic(UB_LOG_LOGID), ub_log_getbasic(UB_LOG_REQIP), ##arg)
 
 this is a test);
 
-BS_LOG_WARNING(TASK_FILE_LOG_FMT("error read from file, error [%m],\ 
+xxx_LOG_WARNING(TASK_FILE_LOG_FMT("error read from file, error [%m],\ 
             need_read_len[%lu], "
             "read_len [%lu], _read_buf_len[%lu], ")
         "file->offset [%llu], file->length [%llu]",
