@@ -1,3 +1,24 @@
+设计背景：
+
+•已有的测试覆盖率统计工具ccover缺点
+–需要代码打桩编译，耗费时间
+–运行前后需要做一系列设置，动作较繁冗
+–多份cov结果 merge复杂
+•异常覆盖统计缺乏有效工具支持
+–RD单元测试异常覆盖缺乏直观、针对性的统计
+–分布式系统的多机异常覆盖率统计费时费力
+•新思路
+-通过log进行异常覆盖率分析
+
+
+功能：
+•单机多log file parse、filt、merge
+•多机部署、多机log汇总、merge
+•输入svn,自动san源文件，获得代码中日志打印静态信息
+•自动diff，得出异常log覆盖率html报告
+•覆盖率报告邮件推送
+
+
 USAGE:
 Single Machine Mode:
 sh logcover.sh $svn $log_cover_log_dir aa@yy [ xx@yy ] -s $mail_subject
@@ -6,6 +27,3 @@ NEEDED:
 1: perl v5.8.5+ 
 2: python v2.7+
 3: svn client v1.6.5+
-
-
-
