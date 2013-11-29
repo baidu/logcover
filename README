@@ -20,7 +20,10 @@
 
 
 USAGE:
-Single Machine Mode:
+修改对应 logcover.cfg文件 
+logcover_type =0 表示单机模式；logcover_type=1表示多机模式。
+选择多机模式时，对应填写 machines、user、password、log_paths和script_path
+执行：
 sh logcover.sh $svn $log_cover_log_dir aa@yy [ xx@yy ] -s $mail_subject
 
 NEEDED:
